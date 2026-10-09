@@ -12,7 +12,7 @@
         }
 
         body {
-            background-color: #080808;
+            background: linear-gradient(135deg, #050505 0%, #121212 50%, #1a1a1a 100%);
             color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             min-height: 100vh;
@@ -358,27 +358,28 @@
             display: block;
         }
 
-footer {
-        padding: 30px;
-        color: #444;
-        font-size: 0.8rem;
-        text-align: center;
-        border-top: 1px solid #111;
-    }
-
-    @media (max-width: 768px) {
-        body {
-            background: #0a0a0a !important;
+        footer {
+            padding: 30px;
+            color: #444;
+            font-size: 0.8rem;
+            text-align: center;
+            border-top: 1px solid #111;
         }
-    }
-</style>
+
+        /* Mobilne tło – jednolita czerń, gradient zostaje na desktopie */
+        @media (max-width: 768px) {
+            body {
+                background: #0a0a0a !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <!-- OVERLAY DLA KOSZYKA -->
     <div class="cart-overlay" id="cartOverlay"></div>
 
-    <!-- WYSYWANY KOSZYK -->
+    <!-- WYSUWANY KOSZYK -->
     <div class="cart-drawer" id="cartDrawer">
         <div class="cart-header">
             <span class="cart-title" id="txtCartTitle">TWÓJ KOSZYK</span>
@@ -423,7 +424,7 @@ footer {
                     <p class="product-desc">Black / Heavyweight Garment-Dyed Cotton / Boxy Fit</p>
                 </div>
                 <div>
-                    <div class="product-price" data-usd="34.99">$34.99</div>
+                    <div class="product-price" data-usd="29.99">$29.99</div>
                     <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-5" target="_blank" class="buy-button">KUP TERAZ</a>
                 </div>
             </div>
@@ -479,7 +480,7 @@ footer {
                     <p class="product-desc">Black / Heavyweight Garment-Dyed Cotton / Boxy Fit</p>
                 </div>
                 <div>
-                    <div class="product-price" data-usd="34.99">$34.99</div>
+                    <div class="product-price" data-usd="29.99">$29.99</div>
                     <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-5" target="_blank" class="buy-button">KUP TERAZ</a>
                 </div>
             </div>
@@ -491,7 +492,7 @@ footer {
                     <p class="product-desc">White / Heavyweight Garment-Dyed Cotton / Boxy Fit</p>
                 </div>
                 <div>
-                    <div class="product-price" data-usd="34.99">$34.99</div>
+                    <div class="product-price" data-usd="29.99">$29.99</div>
                     <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-4" target="_blank" class="buy-button">KUP TERAZ</a>
                 </div>
             </div>
