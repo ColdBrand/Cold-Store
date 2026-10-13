@@ -192,7 +192,7 @@
         /* SIATKA PRODUKTÓW */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
@@ -263,7 +263,7 @@
             color: #ffffff;
         }
 
-        /* SLIDER DLA KOSZULEK ZE STRZAŁKAMI */
+        /* SLIDER DLA KOSZULEK - SIZEO ZROBIONE JAK LONGSLEEVE */
         .slider-container {
             position: relative;
             display: flex;
@@ -277,16 +277,23 @@
             scroll-behavior: smooth;
             padding: 10px 0;
             scrollbar-width: none;
+            width: 100%;
         }
 
         .slider-wrapper::-webkit-scrollbar {
             display: none;
         }
 
-        /* Stała szerokość w sliderze sprawia, że przewijanie ma sens */
+        /* DOKŁADNIE TAKA SAMA SZEROKOŚĆ JAK W LONGSLEEVACCH */
         .slider-wrapper .product-card {
-            flex: 0 0 260px;
-            width: 260px;
+            flex: 0 0 calc(50% - 10px);
+            min-width: 280px;
+        }
+
+        @media (max-width: 768px) {
+            .slider-wrapper .product-card {
+                flex: 0 0 85%;
+            }
         }
 
         .scroll-btn {
@@ -296,10 +303,10 @@
             background: rgba(13, 13, 13, 0.95);
             border: 1px solid #cc0000;
             color: #fff;
-            width: 38px;
-            height: 38px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 900;
             cursor: pointer;
             z-index: 10;
@@ -316,11 +323,11 @@
         }
 
         .scroll-btn.left {
-            left: -18px;
+            left: -22px;
         }
 
         .scroll-btn.right {
-            right: -18px;
+            right: -22px;
         }
 
         /* COMING SOON SECTION */
@@ -623,13 +630,12 @@
         const slideLeft = document.getElementById('slideLeft');
         const slideRight = document.getElementById('slideRight');
 
-        // STRZAŁKI DO SCROLLOWANIA KOSZULEK
         slideLeft.addEventListener('click', () => {
-            tshirtSlider.scrollBy({ left: -280, behavior: 'smooth' });
+            tshirtSlider.scrollBy({ left: -350, behavior: 'smooth' });
         });
 
         slideRight.addEventListener('click', () => {
-            tshirtSlider.scrollBy({ left: 280, behavior: 'smooth' });
+            tshirtSlider.scrollBy({ left: 350, behavior: 'smooth' });
         });
 
         const translations = {
