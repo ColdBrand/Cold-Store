@@ -47,24 +47,24 @@
         .section-title {
             font-size: 1.2rem;
             text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             letter-spacing: 0.15em;
             color: #888;
             border-left: 2px solid #fff;
             padding-left: 10px;
         }
 
-        /* --- HORIZONTAL SLIDER (PASEK DO PRZEWIJANIA) --- */
+        /* --- USTAWIENIA SLIDERA / SIATKI --- */
         .products-slider-wrapper {
-            position: relative;
+            width: 100%;
             margin-bottom: 80px;
         }
         .products-slider {
             display: flex;
-            gap: 24px;
+            gap: 30px;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            padding-bottom: 15px;
+            padding-bottom: 20px;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
             scrollbar-color: #333 #111;
@@ -79,20 +79,18 @@
             background: #333;
             border-radius: 3px;
         }
+
+        /* Karty produktów */
         .product-card {
-            flex: 0 0 300px; /* Szerokość pojedynczej karty na pasku */
+            flex: 0 0 320px; /* Stała, elegancka szerokość karty */
             scroll-snap-align: start;
             background: #111;
             border: 1px solid #1f1f1f;
-            transition: border-color 0.3s ease;
-        }
-        @media (max-width: 600px) {
-            .product-card {
-                flex: 0 0 85%; /* Na telefonie zajmuje większość ekranu, zachęcając do przesunięcia */
-            }
+            transition: border-color 0.3s ease, transform 0.2s ease;
         }
         .product-card:hover {
             border-color: #444;
+            transform: translateY(-3px);
         }
         .product-image {
             width: 100%;
@@ -140,6 +138,14 @@
         .buy-btn:hover {
             background: #ccc;
         }
+
+        /* Dopasowanie na urządzenia mobilne */
+        @media (max-width: 650px) {
+            .product-card {
+                flex: 0 0 85%; /* Na telefonie zajmuje 85% ekranu i płynnie przesuwa się w lewo/prawo */
+            }
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -161,7 +167,6 @@
 
     <main class="container">
         
-        <!-- SLIDER z produktami (Przewijanie w lewo / prawo) -->
         <h2 class="section-title">New Arrivals</h2>
         
         <div class="products-slider-wrapper">
