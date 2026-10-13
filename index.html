@@ -35,7 +35,6 @@
             z-index: 100;
         }
 
-        /* LOGO Z CZERWONYM GRADIENTEM ON HOVER */
         .logo-box {
             position: relative;
             display: inline-flex;
@@ -88,7 +87,6 @@
             z-index: 2;
         }
 
-        /* CONTROL BUTTONS (LANG, CURRENCY, CART) */
         .header-controls {
             display: flex;
             align-items: center;
@@ -122,7 +120,7 @@
             background: #e60000;
         }
 
-        /* RED HERO BANNER */
+        /* HERO BANNER */
         .hero-banner {
             width: 100%;
             background: linear-gradient(135deg, #b30000 0%, #800000 100%);
@@ -165,7 +163,6 @@
             text-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
-        /* MAIN CONTENT & SECTIONS */
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -192,6 +189,7 @@
             background-color: #cc0000;
         }
 
+        /* SIATKA I KARTY PRODUKTÓW */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -207,6 +205,7 @@
             flex-direction: column;
             justify-content: space-between;
             transition: transform 0.2s, border-color 0.2s;
+            height: 100%;
         }
 
         .product-card:hover {
@@ -216,11 +215,12 @@
 
         .product-image {
             width: 100%;
+            height: 320px;
             border-radius: 6px;
             background-color: #000;
             margin-bottom: 14px;
-            aspect-ratio: 1/1;
             object-fit: cover;
+            display: block;
         }
 
         .product-title {
@@ -264,7 +264,65 @@
             color: #ffffff;
         }
 
-        /* COMING SOON BANNER */
+        /* SLIDER DLA KOSZULEK ZE STRZAŁKAMI */
+        .slider-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .slider-wrapper::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .slider-wrapper .product-card {
+            flex: 0 0 280px;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(13, 13, 13, 0.9);
+            border: 1px solid #cc0000;
+            color: #fff;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: 900;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .scroll-btn:hover {
+            background: #cc0000;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .scroll-btn.left {
+            left: -15px;
+        }
+
+        .scroll-btn.right {
+            right: -15px;
+        }
+
+        /* COMING SOON SECTION */
         .coming-soon-section {
             text-align: center;
             padding: 80px 20px 40px 20px;
@@ -370,6 +428,9 @@
             body {
                 background: #0a0a0a !important;
             }
+            .scroll-btn {
+                display: none; /* Na telefonie przewijamy płynnie palcem */
+            }
         }
     </style>
 </head>
@@ -413,7 +474,7 @@
     <!-- MAIN PRODUCTS CONTENT -->
     <main>
 
-        <!-- SEKCJA 0: NOWOŚCI (BLADE TEES) -->
+        <!-- SEKCJA 1: NOWOŚCI -->
         <h2 class="section-title" id="secNew">NOWOŚCI</h2>
         <div class="products-grid">
             <div class="product-card">
@@ -441,9 +502,72 @@
             </div>
         </div>
 
-        <!-- SEKCJA 1: POPULARNE -->
-        <h2 class="section-title" id="secPopular">POPULARNE</h2>
+        <!-- SEKCJA 2: KOSZULKI (SLIDER ZE STRZAŁKAMI PRZEWIJANIA) -->
+        <h2 class="section-title" id="secTshirts">KOSZULKI</h2>
+        <div class="slider-container">
+            <button class="scroll-btn left" id="slideLeft">&lt;</button>
+            <div class="slider-wrapper" id="tshirtSlider">
+                
+                <!-- Blade Tee Czarny -->
+                <div class="product-card">
+                    <div>
+                        <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/08d1e7f3-f732-41bd-ae5a-8172ef8cd57c/04ae07edf15cdd33c4b86b0b8a40b5bc3996b220cfd32b6a58b29b1f6b1e3a7f.webp" alt="CØLD Blade Tee Black" class="product-image">
+                        <h3 class="product-title">CØLD Blade Tee</h3>
+                        <p class="product-desc">Black / Heavyweight 240 GSM Cotton / Custom Blade Graphic</p>
+                    </div>
+                    <div>
+                        <div class="product-price" data-usd="24.99">$24.99</div>
+                        <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee" target="_blank" class="buy-button">KUP TERAZ</a>
+                    </div>
+                </div>
+
+                <!-- Blade Tee Biały -->
+                <div class="product-card">
+                    <div>
+                        <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/10b4f085-cf4c-41e7-ade5-13560af7a276/18447ea071522a02cd014eb12375d456ca6223ce4860f3a2ff76d3377d137eb6.webp" alt="CØLD Blade Tee White" class="product-image">
+                        <h3 class="product-title">CØLD Blade Tee</h3>
+                        <p class="product-desc">White / Heavyweight 240 GSM Cotton / Custom Blade Graphic</p>
+                    </div>
+                    <div>
+                        <div class="product-price" data-usd="24.99">$24.99</div>
+                        <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee-2" target="_blank" class="buy-button">KUP TERAZ</a>
+                    </div>
+                </div>
+
+                <!-- Classic Tee Czarny -->
+                <div class="product-card">
+                    <div>
+                        <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/09db6b48-027e-4d15-9fa0-b13733fd5912/ee173021fbdbfbd586c0d4dc264f9bf9554890ce6f2550c9105f4dabe61364ec.webp" alt="CØLD Classic T-Shirt Black" class="product-image">
+                        <h3 class="product-title">CØLD Classic T-Shirt</h3>
+                        <p class="product-desc">Black / Comfort Colors 1717 Heavyweight Tee / Oversize Fit</p>
+                    </div>
+                    <div>
+                        <div class="product-price" data-usd="24.99">$24.99</div>
+                        <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-3" target="_blank" class="buy-button">KUP TERAZ</a>
+                    </div>
+                </div>
+
+                <!-- Classic Tee Biały -->
+                <div class="product-card">
+                    <div>
+                        <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/b03cf86f-22ba-4fbb-b6c2-2727b9b41c2f/dbd84d8636d4174e0787c5d6cc250237c148a9b2c19ccb4684ffd8ed131e3610.webp" alt="CØLD Classic T-Shirt White" class="product-image">
+                        <h3 class="product-title">CØLD Classic T-Shirt</h3>
+                        <p class="product-desc">White / Comfort Colors 1717 Heavyweight Tee / Oversize Fit</p>
+                    </div>
+                    <div>
+                        <div class="product-price" data-usd="24.99">$24.99</div>
+                        <a href="https://app.amazecommerce.com/shop/coldwear/untitled-product-2" target="_blank" class="buy-button">KUP TERAZ</a>
+                    </div>
+                </div>
+
+            </div>
+            <button class="scroll-btn right" id="slideRight">&gt;</button>
+        </div>
+
+        <!-- SEKCJA 3: LONGSLEEVE -->
+        <h2 class="section-title" id="secLongsleeve">LONGSLEEVE</h2>
         <div class="products-grid">
+            <!-- Czarny Longsleeve -->
             <div class="product-card">
                 <div>
                     <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/f274a7f1-019d-4003-b040-8cc1d1adf7de/49ca0e60c8d206356d9041e2edb18349e3c7e7773ddd6636a1dfa30bceb33ccd.webp" alt="CØLD Classic Longsleeve Black" class="product-image">
@@ -456,52 +580,122 @@
                 </div>
             </div>
 
+            <!-- Biały Longsleeve -->
             <div class="product-card">
                 <div>
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/09db6b48-027e-4d15-9fa0-b13733fd5912/ee173021fbdbfbd586c0d4dc264f9bf9554890ce6f2550c9105f4dabe61364ec.webp" alt="CØLD Classic T-Shirt Black" class="product-image">
-                    <h3 class="product-title">CØLD Classic T-Shirt</h3>
-                    <p class="product-desc">Black / Comfort Colors 1717 Heavyweight Tee / Oversize Fit</p>
-                </div>
-                <div>
-                    <div class="product-price" data-usd="24.99">$24.99</div>
-                    <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-3" target="_blank" class="buy-button">KUP TERAZ</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- SEKCJA 2: KOSZULKI -->
-        <h2 class="section-title" id="secTshirts">KOSZULKI</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div>
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/09db6b48-027e-4d15-9fa0-b13733fd5912/ee173021fbdbfbd586c0d4dc264f9bf9554890ce6f2550c9105f4dabe61364ec.webp" alt="CØLD Classic T-Shirt Black" class="product-image">
-                    <h3 class="product-title">CØLD Classic T-Shirt</h3>
-                    <p class="product-desc">Black / Comfort Colors 1717 Heavyweight Tee / Oversize Fit</p>
-                </div>
-                <div>
-                    <div class="product-price" data-usd="24.99">$24.99</div>
-                    <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-3" target="_blank" class="buy-button">KUP TERAZ</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div>
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/b03cf86f-22ba-4fbb-b6c2-2727b9b41c2f/dbd84d8636d4174e0787c5d6cc250237c148a9b2c19ccb4684ffd8ed131e3610.webp" alt="CØLD Classic T-Shirt White" class="product-image">
-                    <h3 class="product-title">CØLD Classic T-Shirt</h3>
-                    <p class="product-desc">White / Comfort Colors 1717 Heavyweight Tee / Oversize Fit</p>
-                </div>
-                <div>
-                    <div class="product-price" data-usd="24.99">$24.99</div>
-                    <a href="https://app.amazecommerce.com/shop/coldwear/untitled-product-2" target="_blank" class="buy-button">KUP TERAZ</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- SEKCJA 3: LONGSLEEVE -->
-        <h2 class="section-title" id="secLongsleeve">LONGSLEEVE</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div>
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/f274a7f1-019d-4003-b040-8cc1d1adf7de/49ca0e60c8d206356d9041e2edb18349e3c7e7773ddd6636a1dfa30bceb33ccd.webp" alt="CØLD Classic Longsleeve Black" class="product-image">
+                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/d4ef4c0b-9c40-4a88-970e-f46c3770026f/af9e465166dfa40e524ac140ca4bab70a7eddf39e9a812975767237e96970380.webp" alt="CØLD Classic Longsleeve White" class="product-image">
                     <h3 class="product-title">CØLD Classic Longsleeve</h3>
-                    <p class="product-desc">Black /
+                    <p class="product-desc">White / Heavyweight Garment-Dyed Cotton / Boxy Fit</p>
+                </div>
+                <div>
+                    <div class="product-price" data-usd="29.99">$29.99</div>
+                    <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-4" target="_blank" class="buy-button">KUP TERAZ</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMING SOON SECTION -->
+        <div class="coming-soon-section">
+            <div class="coming-soon-text">CØMING SØØN</div>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2026 CØLD STREETWEAR. ALL RIGHTS RESERVED.
+    </footer>
+
+    <!-- INTERAKCJE JS -->
+    <script>
+        let currentLang = 'PL';
+        let currentCurrency = 'USD';
+        const usdToPlnRate = 4.0;
+
+        const btnLang = document.getElementById('btnLang');
+        const btnCurr = document.getElementById('btnCurr');
+        const btnCart = document.getElementById('btnCart');
+        const closeCart = document.getElementById('closeCart');
+        const cartDrawer = document.getElementById('cartDrawer');
+        const cartOverlay = document.getElementById('cartOverlay');
+
+        const tshirtSlider = document.getElementById('tshirtSlider');
+        const slideLeft = document.getElementById('slideLeft');
+        const slideRight = document.getElementById('slideRight');
+
+        // STRZAŁKI DO SCROLLOWANIA KOSZULEK
+        slideLeft.addEventListener('click', () => {
+            tshirtSlider.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        slideRight.addEventListener('click', () => {
+            tshirtSlider.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+
+        const translations = {
+            PL: {
+                secNew: "NOWOŚCI",
+                secTshirts: "KOSZULKI",
+                secLongsleeve: "LONGSLEEVE",
+                txtCartBtn: "KOSZYK (0)",
+                txtCartTitle: "TWÓJ KOSZYK",
+                txtCartEmpty: "Koszyk i płatności są realizowane bezpośrednio na szyfrowanej platformie Amaze Commerce po kliknięciu 'KUP TERAZ'.",
+                buyBtn: "KUP TERAZ"
+            },
+            EN: {
+                secNew: "NEW ARRIVALS",
+                secTshirts: "T-SHIRTS",
+                secLongsleeve: "LONGSLEEVE",
+                txtCartBtn: "CART (0)",
+                txtCartTitle: "YOUR CART",
+                txtCartEmpty: "Cart & checkout are securely processed on Amaze Commerce upon clicking 'BUY NOW'.",
+                buyBtn: "BUY NOW"
+            }
+        };
+
+        btnLang.addEventListener('click', () => {
+            currentLang = currentLang === 'PL' ? 'EN' : 'PL';
+            btnLang.textContent = currentLang;
+
+            const t = translations[currentLang];
+            document.getElementById('secNew').textContent = t.secNew;
+            document.getElementById('secTshirts').textContent = t.secTshirts;
+            document.getElementById('secLongsleeve').textContent = t.secLongsleeve;
+            document.getElementById('txtCartBtn').textContent = t.txtCartBtn;
+            document.getElementById('txtCartTitle').textContent = t.txtCartTitle;
+            document.getElementById('txtCartEmpty').textContent = t.txtCartEmpty;
+
+            document.querySelectorAll('.buy-button').forEach(btn => {
+                btn.textContent = t.buyBtn;
+            });
+        });
+
+        btnCurr.addEventListener('click', () => {
+            currentCurrency = currentCurrency === 'USD' ? 'PLN' : 'USD';
+            btnCurr.textContent = currentCurrency === 'USD' ? 'USD ($)' : 'PLN (zł)';
+
+            document.querySelectorAll('.product-price').forEach(el => {
+                const usdVal = parseFloat(el.getAttribute('data-usd'));
+                if (currentCurrency === 'PLN') {
+                    const plnVal = (usdVal * usdToPlnRate).toFixed(2);
+                    el.textContent = `${plnVal} PLN`;
+                } else {
+                    el.textContent = `$${usdVal.toFixed(2)}`;
+                }
+            });
+        });
+
+        btnCart.addEventListener('click', () => {
+            cartDrawer.classList.add('open');
+            cartOverlay.classList.add('open');
+        });
+
+        const hideCart = () => {
+            cartDrawer.classList.remove('open');
+            cartOverlay.classList.remove('open');
+        };
+
+        closeCart.addEventListener('click', hideCart);
+        cartOverlay.addEventListener('click', hideCart);
+    </script>
+</body>
+</html>
