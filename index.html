@@ -21,26 +21,32 @@
             padding: 40px 20px;
             text-align: center;
             border-bottom: 1px solid #1a1a1a;
+            background: #0b0b0b;
         }
         .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: 0.2em;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 0.25em;
             color: #fff;
             text-decoration: none;
         }
+        .logo span {
+            color: #e50914;
+        }
+        /* Czerwony baner / tło */
         .coming-soon-banner {
-            background: #141414;
-            color: #888;
+            background: linear-gradient(135deg, #b30000 0%, #e50914 100%);
+            color: #fff;
             text-align: center;
-            padding: 12px;
+            padding: 14px;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            border-bottom: 1px solid #222;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 60px 20px;
         }
@@ -49,18 +55,18 @@
             text-transform: uppercase;
             margin-bottom: 30px;
             letter-spacing: 0.15em;
-            color: #888;
-            border-left: 2px solid #fff;
-            padding-left: 10px;
+            color: #ccc;
+            border-left: 3px solid #e50914;
+            padding-left: 12px;
         }
 
-        /* --- PROFESJONALNA WYŚRODKOWANA SIATKA --- */
+        /* Siatka produktów */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
             gap: 40px;
             justify-content: center;
-            margin-bottom: 80px;
+            margin-bottom: 70px;
         }
         .product-card {
             background: #111;
@@ -69,8 +75,8 @@
             width: 100%;
         }
         .product-card:hover {
-            border-color: #444;
-            transform: translateY(-3px);
+            border-color: #e50914;
+            transform: translateY(-4px);
         }
         .product-image {
             width: 100%;
@@ -91,7 +97,7 @@
         .product-desc {
             font-size: 0.85rem;
             color: #888;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             line-height: 1.4;
         }
         .product-footer {
@@ -107,16 +113,17 @@
         .buy-btn {
             background: #fff;
             color: #000;
-            padding: 8px 16px;
+            padding: 9px 18px;
             font-size: 0.8rem;
-            font-weight: 700;
+            font-weight: 800;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            transition: background 0.2s;
+            transition: background 0.2s, color 0.2s;
         }
         .buy-btn:hover {
-            background: #ccc;
+            background: #e50914;
+            color: #fff;
         }
 
         footer {
@@ -124,22 +131,23 @@
             padding: 40px 20px;
             font-size: 0.8rem;
             border-top: 1px solid #1a1a1a;
-            color: #555;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">CØLD</a>
+        <a href="#" class="logo">CØL<span>D</span></a>
     </header>
 
     <div class="coming-soon-banner">
-        Drop 01 — Coming Soon / Worldwide US Shipping
+        🔥 Drop 01 — Coming Soon / Worldwide US Shipping
     </div>
 
     <main class="container">
         
+        <!-- NOWOŚCI: BLADE TEES -->
         <h2 class="section-title">New Arrivals</h2>
         
         <div class="products-grid">
@@ -149,7 +157,7 @@
                 <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/08d1e7f3-f732-41bd-ae5a-8172ef8cd57c/04ae07edf15cdd33c4b86b0b8a40b5bc3996b220cfd32b6a58b29b1f6b1e3a7f.webp" alt="CØLD Blade Tee Black" class="product-image">
                 <div class="product-info">
                     <h3 class="product-title">CØLD Blade Tee (Black)</h3>
-                    <p class="product-desc">CØLD Blade Tee. Heavyweight 240 GSM cotton in a boxy fit. Features custom underground blade graphic and signature branding. Built to last. $24.99 USD.</p>
+                    <p class="product-desc">CØLD Blade Tee. Heavyweight 240 GSM cotton in a boxy fit. Features custom underground blade graphic and signature branding. Built to last.</p>
                     <div class="product-footer">
                         <span class="product-price">$24.99 USD</span>
                         <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee" target="_blank" class="buy-btn">Acquire</a>
@@ -162,10 +170,47 @@
                 <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/10b4f085-cf4c-41e7-ade5-13560af7a276/18447ea071522a02cd014eb12375d456ca6223ce4860f3a2ff76d3377d137eb6.webp" alt="CØLD Blade Tee White" class="product-image">
                 <div class="product-info">
                     <h3 class="product-title">CØLD Blade Tee (White)</h3>
-                    <p class="product-desc">CØLD Blade Tee. Heavyweight 240 GSM cotton in a boxy fit. Features custom underground blade graphic and signature branding. Built to last. $24.99 USD.</p>
+                    <p class="product-desc">CØLD Blade Tee. Heavyweight 240 GSM cotton in a boxy fit. Features custom underground blade graphic and signature branding. Built to last.</p>
                     <div class="product-footer">
                         <span class="product-price">$24.99 USD</span>
                         <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee-2" target="_blank" class="buy-btn">Acquire</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CORE ESSENTIALS: LONGSLEEVES -->
+        <h2 class="section-title">Core Essentials</h2>
+        
+        <div class="products-grid">
+            
+            <!-- Cold Classic Longsleeve Black -->
+            <div class="product-card">
+                <div class="product-image" style="display: flex; align-items: center; justify-content: center; background: #141414; color: #555; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em;">
+                    CØLD Classic LS (Black)
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">CØLD Classic Longsleeve (Black)</h3>
+                    <p class="product-desc">Heavyweight construction, relaxed boxy cut, minimalist chest branding. Built for underground essentials.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$29.99 USD</span>
+                        <a href="https://app.amazecommerce.com/shop/coldbrand" target="_blank" class="buy-btn">Acquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cold Classic Longsleeve White -->
+            <div class="product-card">
+                <div class="product-image" style="display: flex; align-items: center; justify-content: center; background: #141414; color: #555; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em;">
+                    CØLD Classic LS (White)
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">CØLD Classic Longsleeve (White)</h3>
+                    <p class="product-desc">Heavyweight construction, relaxed boxy cut, minimalist chest branding. Built for underground essentials.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$29.99 USD</span>
+                        <a href="https://app.amazecommerce.com/shop/coldbrand" target="_blank" class="buy-btn">Acquire</a>
                     </div>
                 </div>
             </div>
