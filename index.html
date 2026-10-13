@@ -40,7 +40,7 @@
             border-bottom: 1px solid #222;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 60px 20px;
         }
@@ -54,39 +54,19 @@
             padding-left: 10px;
         }
 
-        /* --- USTAWIENIA SLIDERA / SIATKI --- */
-        .products-slider-wrapper {
-            width: 100%;
+        /* --- PROFESJONALNA WYŚRODKOWANA SIATKA --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+            gap: 40px;
+            justify-content: center;
             margin-bottom: 80px;
         }
-        .products-slider {
-            display: flex;
-            gap: 30px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 20px;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: #333 #111;
-        }
-        .products-slider::-webkit-scrollbar {
-            height: 6px;
-        }
-        .products-slider::-webkit-scrollbar-track {
-            background: #111;
-        }
-        .products-slider::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 3px;
-        }
-
-        /* Karty produktów */
         .product-card {
-            flex: 0 0 320px; /* Stała, elegancka szerokość karty */
-            scroll-snap-align: start;
             background: #111;
             border: 1px solid #1f1f1f;
             transition: border-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
         }
         .product-card:hover {
             border-color: #444;
@@ -139,13 +119,6 @@
             background: #ccc;
         }
 
-        /* Dopasowanie na urządzenia mobilne */
-        @media (max-width: 650px) {
-            .product-card {
-                flex: 0 0 85%; /* Na telefonie zajmuje 85% ekranu i płynnie przesuwa się w lewo/prawo */
-            }
-        }
-
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -169,36 +142,34 @@
         
         <h2 class="section-title">New Arrivals</h2>
         
-        <div class="products-slider-wrapper">
-            <div class="products-slider">
-                
-                <!-- Blade Tee Black -->
-                <div class="product-card">
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/08d1e7f3-f732-41bd-ae5a-8172ef8cd57c/04ae07edf15cdd33c4b86b0b8a40b5bc3996b220cfd32b6a58b29b1f6b1e3a7f.webp" alt="CØLD Blade Tee Black" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">CØLD Blade Tee (Black)</h3>
-                        <p class="product-desc">CØLD Blade Tee. Heavyweight 240 GSM cotton in a boxy fit. Features custom underground blade graphic and signature branding. Built to last. $24.99 USD.</p>
-                        <div class="product-footer">
-                            <span class="product-price">$24.99 USD</span>
-                            <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee" target="_blank" class="buy-btn">Acquire</a>
-                        </div>
+        <div class="products-grid">
+            
+            <!-- Blade Tee Black -->
+            <div class="product-card">
+                <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/08d1e7f3-f732-41bd-ae5a-8172ef8cd57c/04ae07edf15cdd33c4b86b0b8a40b5bc3996b220cfd32b6a58b29b1f6b1e3a7f.webp" alt="CØLD Blade Tee Black" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">CØLD Blade Tee (Black)</h3>
+                    <p class="product-desc">CØLD Blade Tee. Heavyweight 240 GSM cotton in a boxy fit. Features custom underground blade graphic and signature branding. Built to last. $24.99 USD.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$24.99 USD</span>
+                        <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee" target="_blank" class="buy-btn">Acquire</a>
                     </div>
                 </div>
-
-                <!-- Blade Tee White -->
-                <div class="product-card">
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/10b4f085-cf4c-41e7-ade5-13560af7a276/18447ea071522a02cd014eb12375d456ca6223ce4860f3a2ff76d3377d137eb6.webp" alt="CØLD Blade Tee White" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">CØLD Blade Tee (White)</h3>
-                        <p class="product-desc">CØLD Blade Tee. Heavyweight 240 GSM cotton in a boxy fit. Features custom underground blade graphic and signature branding. Built to last. $24.99 USD.</p>
-                        <div class="product-footer">
-                            <span class="product-price">$24.99 USD</span>
-                            <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee-2" target="_blank" class="buy-btn">Acquire</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- Blade Tee White -->
+            <div class="product-card">
+                <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/10b4f085-cf4c-41e7-ade5-13560af7a276/18447ea071522a02cd014eb12375d456ca6223ce4860f3a2ff76d3377d137eb6.webp" alt="CØLD Blade Tee White" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">CØLD Blade Tee (White)</h3>
+                    <p class="product-desc">CØLD Blade Tee. Heavyweight 240 GSM cotton in a boxy fit. Features custom underground blade graphic and signature branding. Built to last. $24.99 USD.</p>
+                    <div class="product-footer">
+                        <span class="product-price">$24.99 USD</span>
+                        <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee-2" target="_blank" class="buy-btn">Acquire</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </main>
