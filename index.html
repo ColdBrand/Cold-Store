@@ -189,13 +189,7 @@
             background-color: #cc0000;
         }
 
-        /* SIATKA PRODUKTÓW */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
+        /* KARTY PRODUKTÓW */
         .product-card {
             background: #111111;
             border: 1px solid #222222;
@@ -263,7 +257,7 @@
             color: #ffffff;
         }
 
-        /* SLIDER DLA KOSZULEK - SIZEO ZROBIONE JAK LONGSLEEVE */
+        /* UNIWERSALNY SLIDER ZE STRZAŁKAMI */
         .slider-container {
             position: relative;
             display: flex;
@@ -284,7 +278,6 @@
             display: none;
         }
 
-        /* DOKŁADNIE TAKA SAMA SZEROKOŚĆ JAK W LONGSLEEVACCH */
         .slider-wrapper .product-card {
             flex: 0 0 calc(50% - 10px);
             min-width: 280px;
@@ -293,6 +286,10 @@
         @media (max-width: 768px) {
             .slider-wrapper .product-card {
                 flex: 0 0 85%;
+                min-width: 85%;
+            }
+            .scroll-btn {
+                display: none;
             }
         }
 
@@ -431,15 +428,6 @@
             text-align: center;
             border-top: 1px solid #111;
         }
-
-        @media (max-width: 768px) {
-            body {
-                background: #0a0a0a !important;
-            }
-            .scroll-btn {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
@@ -484,39 +472,41 @@
 
         <!-- SEKCJA 1: NOWOŚCI -->
         <h2 class="section-title" id="secNew">NOWOŚCI</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div>
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/08d1e7f3-f732-41bd-ae5a-8172ef8cd57c/04ae07edf15cdd33c4b86b0b8a40b5bc3996b220cfd32b6a58b29b1f6b1e3a7f.webp" alt="CØLD Blade Tee Black" class="product-image">
-                    <h3 class="product-title">CØLD Blade Tee</h3>
-                    <p class="product-desc">Black / Heavyweight 240 GSM Cotton / Boxy Fit / Custom Blade Graphic</p>
+        <div class="slider-container">
+            <button class="scroll-btn left" id="slideNewLeft">&lt;</button>
+            <div class="slider-wrapper" id="newSlider">
+                <div class="product-card">
+                    <div>
+                        <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/08d1e7f3-f732-41bd-ae5a-8172ef8cd57c/04ae07edf15cdd33c4b86b0b8a40b5bc3996b220cfd32b6a58b29b1f6b1e3a7f.webp" alt="CØLD Blade Tee Black" class="product-image">
+                        <h3 class="product-title">CØLD Blade Tee</h3>
+                        <p class="product-desc">Black / Heavyweight 240 GSM Cotton / Boxy Fit / Custom Blade Graphic</p>
+                    </div>
+                    <div>
+                        <div class="product-price" data-usd="24.99">$24.99</div>
+                        <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee" target="_blank" class="buy-button">KUP TERAZ</a>
+                    </div>
                 </div>
-                <div>
-                    <div class="product-price" data-usd="24.99">$24.99</div>
-                    <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee" target="_blank" class="buy-button">KUP TERAZ</a>
-                </div>
-            </div>
 
-            <div class="product-card">
-                <div>
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/10b4f085-cf4c-41e7-ade5-13560af7a276/18447ea071522a02cd014eb12375d456ca6223ce4860f3a2ff76d3377d137eb6.webp" alt="CØLD Blade Tee White" class="product-image">
-                    <h3 class="product-title">CØLD Blade Tee</h3>
-                    <p class="product-desc">White / Heavyweight 240 GSM Cotton / Boxy Fit / Custom Blade Graphic</p>
-                </div>
-                <div>
-                    <div class="product-price" data-usd="24.99">$24.99</div>
-                    <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee-2" target="_blank" class="buy-button">KUP TERAZ</a>
+                <div class="product-card">
+                    <div>
+                        <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/10b4f085-cf4c-41e7-ade5-13560af7a276/18447ea071522a02cd014eb12375d456ca6223ce4860f3a2ff76d3377d137eb6.webp" alt="CØLD Blade Tee White" class="product-image">
+                        <h3 class="product-title">CØLD Blade Tee</h3>
+                        <p class="product-desc">White / Heavyweight 240 GSM Cotton / Boxy Fit / Custom Blade Graphic</p>
+                    </div>
+                    <div>
+                        <div class="product-price" data-usd="24.99">$24.99</div>
+                        <a href="https://app.amazecommerce.com/shop/coldbrand/cld-blade-tee-2" target="_blank" class="buy-button">KUP TERAZ</a>
+                    </div>
                 </div>
             </div>
+            <button class="scroll-btn right" id="slideNewRight">&gt;</button>
         </div>
 
-        <!-- SEKCJA 2: KOSZULKI (SLIDER ZE STRZAŁKAMI PRZEWIJANIA) -->
+        <!-- SEKCJA 2: KOSZULKI -->
         <h2 class="section-title" id="secTshirts">KOSZULKI</h2>
         <div class="slider-container">
             <button class="scroll-btn left" id="slideLeft">&lt;</button>
             <div class="slider-wrapper" id="tshirtSlider">
-                
-                <!-- Blade Tee Czarny -->
                 <div class="product-card">
                     <div>
                         <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/08d1e7f3-f732-41bd-ae5a-8172ef8cd57c/04ae07edf15cdd33c4b86b0b8a40b5bc3996b220cfd32b6a58b29b1f6b1e3a7f.webp" alt="CØLD Blade Tee Black" class="product-image">
@@ -529,7 +519,6 @@
                     </div>
                 </div>
 
-                <!-- Blade Tee Biały -->
                 <div class="product-card">
                     <div>
                         <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/10b4f085-cf4c-41e7-ade5-13560af7a276/18447ea071522a02cd014eb12375d456ca6223ce4860f3a2ff76d3377d137eb6.webp" alt="CØLD Blade Tee White" class="product-image">
@@ -542,7 +531,6 @@
                     </div>
                 </div>
 
-                <!-- Classic Tee Czarny -->
                 <div class="product-card">
                     <div>
                         <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/09db6b48-027e-4d15-9fa0-b13733fd5912/ee173021fbdbfbd586c0d4dc264f9bf9554890ce6f2550c9105f4dabe61364ec.webp" alt="CØLD Classic T-Shirt Black" class="product-image">
@@ -555,7 +543,6 @@
                     </div>
                 </div>
 
-                <!-- Classic Tee Biały -->
                 <div class="product-card">
                     <div>
                         <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/b03cf86f-22ba-4fbb-b6c2-2727b9b41c2f/dbd84d8636d4174e0787c5d6cc250237c148a9b2c19ccb4684ffd8ed131e3610.webp" alt="CØLD Classic T-Shirt White" class="product-image">
@@ -567,39 +554,40 @@
                         <a href="https://app.amazecommerce.com/shop/coldwear/untitled-product-2" target="_blank" class="buy-button">KUP TERAZ</a>
                     </div>
                 </div>
-
             </div>
             <button class="scroll-btn right" id="slideRight">&gt;</button>
         </div>
 
         <!-- SEKCJA 3: LONGSLEEVE -->
         <h2 class="section-title" id="secLongsleeve">LONGSLEEVE</h2>
-        <div class="products-grid">
-            <!-- Czarny Longsleeve -->
-            <div class="product-card">
-                <div>
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/f274a7f1-019d-4003-b040-8cc1d1adf7de/49ca0e60c8d206356d9041e2edb18349e3c7e7773ddd6636a1dfa30bceb33ccd.webp" alt="CØLD Classic Longsleeve Black" class="product-image">
-                    <h3 class="product-title">CØLD Classic Longsleeve</h3>
-                    <p class="product-desc">Black / Heavyweight Garment-Dyed Cotton / Boxy Fit</p>
+        <div class="slider-container">
+            <button class="scroll-btn left" id="slideLongLeft">&lt;</button>
+            <div class="slider-wrapper" id="longsleeveSlider">
+                <div class="product-card">
+                    <div>
+                        <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/f274a7f1-019d-4003-b040-8cc1d1adf7de/49ca0e60c8d206356d9041e2edb18349e3c7e7773ddd6636a1dfa30bceb33ccd.webp" alt="CØLD Classic Longsleeve Black" class="product-image">
+                        <h3 class="product-title">CØLD Classic Longsleeve</h3>
+                        <p class="product-desc">Black / Heavyweight Garment-Dyed Cotton / Boxy Fit</p>
+                    </div>
+                    <div>
+                        <div class="product-price" data-usd="29.99">$29.99</div>
+                        <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-5" target="_blank" class="buy-button">KUP TERAZ</a>
+                    </div>
                 </div>
-                <div>
-                    <div class="product-price" data-usd="29.99">$29.99</div>
-                    <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-5" target="_blank" class="buy-button">KUP TERAZ</a>
-                </div>
-            </div>
 
-            <!-- Biały Longsleeve -->
-            <div class="product-card">
-                <div>
-                    <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/d4ef4c0b-9c40-4a88-970e-f46c3770026f/af9e465166dfa40e524ac140ca4bab70a7eddf39e9a812975767237e96970380.webp" alt="CØLD Classic Longsleeve White" class="product-image">
-                    <h3 class="product-title">CØLD Classic Longsleeve</h3>
-                    <p class="product-desc">White / Heavyweight Garment-Dyed Cotton / Boxy Fit</p>
-                </div>
-                <div>
-                    <div class="product-price" data-usd="29.99">$29.99</div>
-                    <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-4" target="_blank" class="buy-button">KUP TERAZ</a>
+                <div class="product-card">
+                    <div>
+                        <img src="https://scknahadzvkxdxilgapm.supabase.co/storage/v1/object/public/alpha-public/optimized/035ed6e1-7579-4e38-b71d-d3e11863f169/listing-mockups/d4ef4c0b-9c40-4a88-970e-f46c3770026f/af9e465166dfa40e524ac140ca4bab70a7eddf39e9a812975767237e96970380.webp" alt="CØLD Classic Longsleeve White" class="product-image">
+                        <h3 class="product-title">CØLD Classic Longsleeve</h3>
+                        <p class="product-desc">White / Heavyweight Garment-Dyed Cotton / Boxy Fit</p>
+                    </div>
+                    <div>
+                        <div class="product-price" data-usd="29.99">$29.99</div>
+                        <a href="https://app.amazecommerce.com/shop/coldwear/cld-classic-4" target="_blank" class="buy-button">KUP TERAZ</a>
+                    </div>
                 </div>
             </div>
+            <button class="scroll-btn right" id="slideLongRight">&gt;</button>
         </div>
 
         <!-- COMING SOON SECTION -->
@@ -626,17 +614,24 @@
         const cartDrawer = document.getElementById('cartDrawer');
         const cartOverlay = document.getElementById('cartOverlay');
 
-        const tshirtSlider = document.getElementById('tshirtSlider');
-        const slideLeft = document.getElementById('slideLeft');
-        const slideRight = document.getElementById('slideRight');
+        // Funkcja obsługująca przewijanie sliderów
+        function setupSlider(sliderId, btnLeftId, btnRightId) {
+            const slider = document.getElementById(sliderId);
+            const btnL = document.getElementById(btnLeftId);
+            const btnR = document.getElementById(btnRightId);
+            if (slider && btnL && btnR) {
+                btnL.addEventListener('click', () => {
+                    slider.scrollBy({ left: -350, behavior: 'smooth' });
+                });
+                btnR.addEventListener('click', () => {
+                    slider.scrollBy({ left: 350, behavior: 'smooth' });
+                });
+            }
+        }
 
-        slideLeft.addEventListener('click', () => {
-            tshirtSlider.scrollBy({ left: -350, behavior: 'smooth' });
-        });
-
-        slideRight.addEventListener('click', () => {
-            tshirtSlider.scrollBy({ left: 350, behavior: 'smooth' });
-        });
+        setupSlider('newSlider', 'slideNewLeft', 'slideNewRight');
+        setupSlider('tshirtSlider', 'slideLeft', 'slideRight');
+        setupSlider('longsleeveSlider', 'slideLongLeft', 'slideLongRight');
 
         const translations = {
             PL: {
